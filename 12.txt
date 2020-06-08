@@ -1,0 +1,83 @@
+import java.util.Scanner;
+class Main {
+  public static void main(String[] args) {
+    System.out.print("Задание 1\n");
+    Scanner ds = new Scanner(System.in);
+    String s = ds.nextLine();
+    int v=0;
+    for (int i=(s.length()-1); i>-1; i--)
+    {
+      char lo = s.charAt(i);
+      char lol=' ';
+      if(i!=0) smb2 = s.charAt(i-1);
+      if (lo=='I') v=v+1;
+      else if (lo=='V') 
+      {
+        if (lol=='I') 
+        {
+          v=v+4;
+          i--;
+        }
+        else v=v+5;
+      }
+      else if (lo=='X') 
+      {
+        if (lol=='I') 
+        {
+          v=v+9;
+          i--;
+        }
+        else v=v+10;
+      }
+      else if (lo=='L') 
+      {
+        if (lol=='X') 
+        {
+          v=v+40;
+          i--;
+        }
+        else v=v+50;
+      }
+      else if (lo=='C') 
+      {
+        if (lol=='X') 
+        {
+          v=v+90;
+          i--;
+        }
+        else v=v+100;
+      }
+      else if (lo=='D') 
+      {
+        if (lol=='C') 
+        {
+          v=v+400;
+          i--;
+        }
+        else v=v+500;
+      }
+      else if (lo=='M') 
+      {
+        if (lol=='C') 
+        {
+          v=v+900;
+          i--;
+        }
+        else rez=rez+1000;
+      }
+    }
+    System.out.print("="+v);
+    System.out.print("\nЗадание 2\nВведи число для проверки на палиндром: ");
+    Scanner in = new Scanner(System.in);
+    String n = in.nextLine();
+    String reverse = new StringBuffer(n).reverse().toString();
+    if (n.equals(reverse) == true)
+    {
+    System.out.println("Число является палиндромом");
+    }
+    else if (n.equals(reverse) == false) 
+    {
+      System.out.println("Число не является палиндромом");
+    }
+  }
+}
